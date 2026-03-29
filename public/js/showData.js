@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         </div>
                         <br/>
                         <a href="cine.html?id=${cine.idFirebase}">
-                            <img src="img/varios/ico-info2.png" width="150" height="40"/>
+                            <img src="https://cpustmhgruetioqfyqye.supabase.co/storage/v1/object/public/cinestar/img/varios/ico-info2.png" width="150" height="40"/>
                         </a>
                     </div>`;
         });
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                             <div class="fila"><div class="celda-titulo">Reparto :</div><div class="celda">${peli.Reparto}</div></div>
                         </div>
                     </div>
-                    <img src="img/pelicula/${peli.id}.jpg" width="160" height="226" onerror="this.src='img/varios/logo-cinestar.png'"><br/><br/>
+                    <img src="https://cpustmhgruetioqfyqye.supabase.co/storage/v1/object/public/cinestar/img/pelicula/${peli.id}.jpg" width="160" height="226" onerror="this.src='https://cpustmhgruetioqfyqye.supabase.co/storage/v1/object/public/cinestar/img/varios/logo-cinestar.png'"><br/><br/>
                 </div>
                 <div class="pelicula-video">
                     <embed src="https://www.youtube.com/v/${peli.Link}fs" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="580" height="400">
