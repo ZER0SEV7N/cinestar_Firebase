@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
         contenido.innerHTML = cinesHTML;
 
+        
     //Mostrar ruta de cine en especifico por su id
     } else if (ruta.includes("cine.html") && id) {
         contenido.innerHTML = "<p>Cargando información del cine...</p>";
@@ -99,6 +100,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         contenido.innerHTML = "<p>Cine no encontrado.</p>";
         }
 
+
     //Mostrar ruta de peliculas
     } else if (ruta.includes("peliculas.html")) {
         const tituloSeccion = id === "2" ? "Próximos Estrenos" : "Cartelera";
@@ -135,6 +137,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
         }
         contenido.innerHTML = peliculasHTML;
+
 
     //Mostrar ruta de pelicula en especifico por su id
     } else if (ruta.includes("pelicula.html") && id) {

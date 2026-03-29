@@ -1,6 +1,6 @@
 //Script para las funciones GET y mapeo de la colección de firebase
 import db from "./Connection.js";
-import { collection, getDocs, doc, getDoc, orderBy } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
+import { collection, getDocs, doc, getDoc } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
 
 //Funcion para obtener todas las peliculas
 export async function getPeliculas() {
