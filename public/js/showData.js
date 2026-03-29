@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 </div>
                 <div class="pelicula-video">
                     <iframe width="580" height="400" 
-                        src="https://www.youtube.com/v/${peli.Link}" 
+                        src="https://www.youtube.com/embed/${peli.Link}" 
                         title="YouTube video player" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
