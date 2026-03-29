@@ -171,7 +171,13 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <img src="https://cpustmhgruetioqfyqye.supabase.co/storage/v1/object/public/cinestar/img/pelicula/${peli.id}.jpg" width="160" height="226" onerror="this.src='https://cpustmhgruetioqfyqye.supabase.co/storage/v1/object/public/cinestar/img/varios/logo-cinestar.png'"><br/><br/>
                 </div>
                 <div class="pelicula-video">
-                    <embed src="https://www.youtube.com/v/${peli.Link}fs" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="580" height="400">
+                    <iframe width="580" height="400" 
+                        src="https://www.youtube.com/v/${peli.Link}" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
             `;
         } else 
