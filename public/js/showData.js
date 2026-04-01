@@ -3,27 +3,50 @@ import { getPeliculas, getCines, getCine, getPelicula } from "./getFunction.js";
 
 //Declara el evento DOMContentLoaded para cargar los datos
 document.addEventListener("DOMContentLoaded", async () => {
-    const ruta = window.location.pathname;
     const contenido = document.getElementById("contenido-interno");
-
-    //Obtener los parametros
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get("id");
-
     if (!contenido) return;
 
-    //Mostrar ruta de cines
-    if (ruta.includes("cines.html"))  
-        renderCines(contenido);
-    //Mostrar ruta de cine en especifico por su id
-    else if (ruta.includes("cine.html") && id) 
-        renderCine(contenido, id);
-    //Mostrar ruta de peliculas
-    else if (ruta.includes("peliculas.html") && id) 
-        renderPeliculas(contenido, id);
-    //Mostrar ruta de pelicula en especifico por su id
-    else if (ruta.includes("pelicula.html") && id) 
-        renderPelicula(contenido, id);
+    //Funcion para manejar las rutas y mostrar el contenido 
+    const router =() => {    
+        //Obtener los parametros
+        const ruta = window.location.pathname;
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+        
+        contenido.innerHTML = "";
+
+        //Mostrar ruta de cines
+        if (ruta.includes("cines.html"))  
+            renderCines(contenido);
+        //Mostrar ruta de cine en especifico por su id
+        else if (ruta.includes("cine.html") && id) 
+            renderCine(contenido, id);
+        //Mostrar ruta de peliculas
+        else if (ruta.includes("peliculas.html") && id) 
+            renderPeliculas(contenido, id);
+        //Mostrar ruta de pelicula en especifico por su id
+        else if (ruta.includes("pelicula.html") && id) 
+            renderPelicula(contenido, id);
+        else
+            contenido.innerHTML = "<h2>Bienvenido a Cinestar.</h2>";
+    };
+
+    document.body.addEventListener("click", (e) => {
+        const link = e.target.closest("a");
+        if(link){
+            const href = link.getAttribute("href");
+
+            if(!href || href.startsWith("http") || href.startsWith("https") || href.startsWith("#")) return;
+
+            e.preventDefault();
+
+            window.history.pushState({}, "", href);
+            router();
+        }
+    });
+
+    window.addEventListener("popstate", router);
+    router();
 
     //Funcion para renderizar cines.html
     async function renderCines(contenido) {
